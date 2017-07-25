@@ -1,6 +1,14 @@
 require "sinatra"
 require "json"
 
+get "/" do
+  @checkouts = Dir.glob("*.json").map do |file|
+    JSON.parse(File.read(file))
+  end
+
+  erb :index
+end
+
 post "/create" do
   email = params["email"]
 
