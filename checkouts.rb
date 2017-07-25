@@ -15,6 +15,8 @@ post "/create" do
   File.open("#{email}-#{Time.now}.json", "w+") do |f|
     f.write(build_blob(params))
   end
+
+  status 201
 end
 
 
