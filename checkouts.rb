@@ -34,5 +34,5 @@ def build_blob(params)
 end
 
 def secret
-  File.read(".secret")
+  "somecrazysecretpeoplewonthave"
 end
