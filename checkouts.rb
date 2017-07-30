@@ -38,7 +38,6 @@ def _send_email(data)
     via_options: {
       :address              => "smtp.gmail.com",
       :port                 => "587",
-      :enable_starttls_auto => true,
       :user_name            => "contact@felloeyewear",
       :password             => ENV["EMAIL_PASSWORD"],
       :authentication       => :plain,
