@@ -33,7 +33,7 @@ def _send_email(data)
     cc: "jonathan@felloeyewear.com",
     from: "contact@felloeyewear.com",
     subject: "New Checkout Started",
-    body: data.inspect
+    body: data.inspect,
     via: :smtp,
     via_options: {
       :address              => "smtp.gmail.com",
