@@ -28,9 +28,8 @@ post "/create" do
 end
 
 def _send_email(data)
-  Pony.mail({
+  Pony.mail(
     to: "jason@felloeyewear.com",
-    cc: "jonathan@felloeyewear.com",
     from: "contact@felloeyewear.com",
     subject: "New Checkout Started",
     body: data.inspect,
@@ -38,12 +37,13 @@ def _send_email(data)
     via_options: {
       :address              => "smtp.gmail.com",
       :port                 => "25",
-      :user_name            => "contact@felloeyewear",
+      :user_name            => "contact@felloeyewear.com",
       :password             => ENV["EMAIL_PASSWORD"],
+      :enable_starttls_auto => true,
       :authentication       => :plain,
       :domain               => "gmail.com"
     }
-  })
+  )
 end
 
 def _build_blob(params)
