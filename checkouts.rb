@@ -37,7 +37,7 @@ def _send_email(data)
     via: :smtp,
     via_options: {
       :address              => "smtp.gmail.com",
-      :port                 => "587",
+      :port                 => "25",
       :user_name            => "contact@felloeyewear",
       :password             => ENV["EMAIL_PASSWORD"],
       :authentication       => :plain,
